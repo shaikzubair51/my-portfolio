@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Shaik Zubair – Designer, Motion Graphics & Video Editor</title>
+  <meta name="description" content="Portfolio of Shaik Zubair – posters, motion graphics, video edits, branding & social ads." />
+  <meta property="og:title" content="Shaik Zubair – Designer, Motion Graphics & Video Editor" />
+  <meta property="og:description" content="Portfolio of Shaik Zubair – posters, motion graphics, video edits, branding & social ads." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/assets/images/og-image.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%23151534'/%3E%3Cpath d='M18 45V19h16c7 0 11 3.8 11 9.7S41 39 33.2 39H25v6h-7zm7-12h8.2c3 0 4.8-1.8 4.8-4.3S36 24 33.2 24H25v9z' fill='%23fff'/%3E%3C/svg%3E" />
+  <style>
+    :root{
+      --bg:#0f1021;
+      --bg2:#151534;
+      --text:#C9C9D5;
+      --muted:#8A8AA3;
+      --white:#fff;
+      --radius:20px;
+      --pad:24px;
+      --section-pad:96px;
+      --grad:linear-gradient(90deg,#FF5FD2, #A95CFF, #FFC05C);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0;font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Ubuntu; background:radial-gradient(1200px 800px at 80% -10%, rgba(255,95,210,.15), transparent 60%) , radial-gradient(1000px 700px at -10% 10%, rgba(169,92,255,.12), transparent 60%), var(--bg); color:var(--text)}
+
+    /* Header */
+    header{position:sticky;top:0;z-index:50;backdrop-filter:saturate(140%) blur(8px); transition:background .3s, box-shadow .3s}
+    header .wrap{max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:16px 20px}
+    nav a{color:var(--text);text-decoration:none;margin-left:22px;font-weight:500;opacity:.85;position:relative}
+    nav a:hover{opacity:1}
+    nav a.active{color:var(--white)}
+    nav a.active::after{content:"";position:absolute;left:0;right:0;bottom:-8px;height:3px;background:var(--grad);border-radius:999px}
+    header.transparent{background:linear-gradient(180deg, rgba(21,21,52,.75), rgba(21,21,52,.35) 60%, transparent)}
+    header.solid{background:rgba(15,16,33,.9);box-shadow:0 6px 30px rgba(0,0,0,.35)}
+    .brand{font-weight:800;letter-spacing:.2em;color:#fff}
+
+    /* Buttons */
+    .btn{--b:2px; display:inline-block;padding:12px 18px;border-radius:14px;color:#fff;text-decoration:none;font-weight:600; position:relative}
+    .btn::before{content:"";position:absolute;inset:0;border-radius:14px;padding:var(--b);background:var(--grad);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor; mask-composite:exclude}
+    .btn.solid{background:#1b1c3a}
+    .btn.ghost{background:transparent}
+    .btn + .btn{margin-left:12px}
+
+    /* Sections */
+    section{padding:var(--section-pad) 20px;scroll-margin-top:90px}
+    .container{max-width:1200px;margin:0 auto}
+
+    /* Hero */
+    .hero{padding-top:120px;padding-bottom:80px;text-align:center;position:relative}
+    .hero .strip{position:absolute;inset:auto 0 0 0;height:6px;background:var(--grad);filter:drop-shadow(0 0 24px rgba(255,160,255,.35))}
+    .avatar{width:140px;height:140px;border-radius:50%;overflow:hidden;margin:0 auto 18px;box-shadow:0 12px 40px rgba(0,0,0,.5), 0 0 0 6px rgba(255,255,255,.06)}
+    .avatar img{width:100%;height:100%;object-fit:cover;display:block}
+    h1{color:#fff;font-size:44px;margin:8px 0 6px;letter-spacing:.5px}
+    .tagline{color:var(--muted);font-weight:500;margin-bottom:22px}
+
+    /* About */
+    .grid{display:grid;gap:28px}
+    @media(min-width:900px){.grid.cols-2{grid-template-columns:1.15fr .85fr}}
+    .card{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:var(--pad);box-shadow:0 10px 40px rgba(0,0,0,.25)}
+    .pills{display:flex;flex-wrap:wrap;gap:10px}
+    .pill{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);color:#fff;font-weight:600;font-size:14px}
+
+    /* Work */
+    .section-title{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px}
+    .section-title h2{margin:0;color:#fff;font-size:30px}
+    .subtle{color:var(--muted);margin:0 0 18px}
+
+    .slider{position:relative}
+    .track{display:flex;gap:16px;overflow:hidden;scroll-behavior:smooth}
+    .slide{flex:0 0 76%;max-width:76%;position:relative}
+    @media(min-width:700px){.slide{flex-basis:33.333%;max-width:33.333%}}
+    .thumb, .thumb-video{border-radius:16px;overflow:hidden;position:relative;cursor:pointer;background:#1b1c3a;min-height:180px;border:1px solid rgba(255,255,255,.06);box-shadow:0 10px 30px rgba(0,0,0,.25)}
+    .thumb img{display:block;width:100%;height:100%;object-fit:cover}
+    .play{position:absolute;inset:auto 12px 12px auto;background:rgba(0,0,0,.55);border-radius:999px;padding:10px}
+    .play::before{content:'▶';color:#fff;font-weight:800}
+    .grad{background:var(--grad)}
+
+    .arrow{position:absolute;top:40%;transform:translateY(-50%);background:rgba(15,16,33,.85);border:1px solid rgba(255,255,255,.08);backdrop-filter:blur(6px);width:42px;height:42px;border-radius:50%;display:grid;place-items:center;color:#fff;font-weight:800;cursor:pointer;user-select:none}
+    .arrow.left{left:-8px}
+    .arrow.right{right:-8px}
+
+    /* Lightbox */
+    .lightbox{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;padding:20px;z-index:100}
+    .lightbox.open{display:flex}
+    .lightbox .inner{width:min(100%,1000px);max-height:90vh;background:#0c0d1e;border:1px solid rgba(255,255,255,.08);border-radius:18px;overflow:hidden;position:relative}
+    .lightbox img, .lightbox iframe{display:block;width:100%;height:70vh;object-fit:contain;background:#000}
+    .lightbox .close{position:absolute;top:10px;right:10px;background:rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.12);width:40px;height:40px;border-radius:50%;display:grid;place-items:center;color:#fff;cursor:pointer}
+    .lightbox .controls{position:absolute;inset:auto 0 0 0;display:flex;justify-content:space-between;padding:10px;background:linear-gradient(180deg, transparent, rgba(0,0,0,.5))}
+    .lightbox .controls a{color:#fff;text-decoration:none;margin:0 10px}
+
+    /* Highlights */
+    .hi{display:grid;gap:14px}
+    @media(min-width:800px){.hi{grid-template-columns:1fr 1fr}}
+    .hi-item{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.06);padding:16px;border-radius:16px}
+    .hi-bullet{width:14px;height:14px;border-radius:50%;background:var(--grad)}
+
+    /* Services */
+    .services{display:grid;gap:18px}
+    @media(min-width:900px){.services{grid-template-columns:repeat(4,1fr)}}
+    .service{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);border-radius:24px;padding:22px;position:relative;transition:transform .25s, box-shadow .25s}
+    .service::after{content:"";position:absolute;inset:0;border-radius:24px;padding:1px;background:var(--grad);opacity:.0;transition:opacity .25s; -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor; mask-composite:exclude}
+    .service:hover{transform:translateY(-4px);box-shadow:0 20px 50px rgba(255,160,255,.08)}
+    .service:hover::after{opacity:1}
+
+    /* Contact */
+    form{display:grid;gap:12px}
+    input, textarea{background:#121331;color:#fff;border:1px solid rgba(255,255,255,.1);border-radius:14px;padding:12px 14px;font:inherit}
+    textarea{min-height:120px}
+    .row{display:grid;gap:12px}
+    @media(min-width:700px){.row{grid-template-columns:1fr 1fr}}
+
+    /* Reveal on scroll */
+    .reveal{opacity:0; transform:translateY(16px); transition:opacity .6s ease, transform .6s ease}
+    .reveal.visible{opacity:1; transform:none}
+
+    footer{padding:40px 20px;color:var(--muted);text-align:center;border-top:1px solid rgba(255,255,255,.06)}
+  </style>
+</head>
+<body>
+  <header class="transparent" id="top">
+    <div class="wrap">
+      <a class="brand" href="#home">ZUBAIR</a>
+      <nav aria-label="Primary">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#work">Work</a>
+        <a href="#highlights">Highlights</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section id="home" class="hero">
+      <div class="container">
+        <div class="avatar reveal"><img loading="lazy" src="https://uploads.onecompiler.io/43b9uen47/43unenu5r/WhatsApp%20Image%202025-08-24%20at%2017.44.18_a8fc6220.jpg" alt="Portrait of Shaik Zubair"/></div>
+        <h1 class="reveal" style="transition-delay:100ms">SHAIK ZUBAIR</h1>
+        <p class="tagline reveal" style="transition-delay:200ms">Graphic Designer | Motion Graphics | Video Editor</p>
+        <div class="reveal" style="transition-delay:300ms">
+          <a class="btn solid" href="#work">See My Work</a>
+          <a class="btn ghost" href="#contact">Contact</a>
+        </div>
+      </div>
+      <div class="strip" aria-hidden="true"></div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="container grid cols-2">
+        <div class="card reveal">
+          <h2 style="color:#fff;margin-top:0">About Me</h2>
+          <p>Hi, I’m Zubair 👋 I’m a passionate graphic designer, motion graphics artist, and video editor. I create posters, reels, and brand visuals that bring stories to life. Currently exploring design projects and sharing knowledge through my social media.</p>
+        </div>
+        <div class="card reveal">
+          <h3 style="color:#fff;margin-top:0">Apps & Software</h3>
+          <div class="pills" id="app-badges">
+            <span class="pill">Photoshop</span>
+            <span class="pill">Alight Motion</span>
+            <span class="pill">CapCut</span>
+            <span class="pill">Canva</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK -->
+    <section id="work">
+      <div class="container">
+        <div class="section-title"><h2>Works</h2></div>
+        <p class="subtle">Posters, Motion Graphics, Video Edits, and Brand ADs. Click any item to preview.</p>
+
+        <!-- Posters Slider -->
+        <div class="card reveal">
+          <div class="section-title"><h3 style="color:#fff;margin:0">Posters</h3></div>
+          <div class="slider" data-name="posters">
+            <div class="arrow left" role="button" aria-label="Previous">‹</div>
+            <div class="track">
+              <div class="slide">
+                <div class="thumb" data-type="image" data-src="https://uploads.onecompiler.io/43b9uen47/43urpjwye/GLAFIRA%20(1).png" aria-label="Poster preview 1">
+                  <img loading="lazy" src="https://uploads.onecompiler.io/43b9uen47/43urpjwye/GLAFIRA%20(1).png" alt="Poster: DESIGN"/>
+                </div>
+              </div>
+              <div class="slide"> 
+                <div class="thumb" data-type="image" data-src="https://uploads.onecompiler.io/43wqawxd5/43wqay9z5/be%20organic%20-%201.png" aria-label="Poster Preview 3"> 
+                  <img loading="lazy" src="https://uploads.onecompiler.io/43wqawxd5/43wqay9z5/be%20organic%20-%201.png" alt="poster: DESIGN"/>
+                </div>
+              </div>
+              <div class="slide"> 
+                <div class="thumb" data-type="image" data-src="https://uploads.onecompiler.io/43wqawxd5/43wqay9z5/BOOFIYA%20AL%20AHLI%201.png" aria-label="poster preview 4">
+                  <img loading="lazy" src="https://uploads.onecompiler.io/43wqawxd5/43wqay9z5/BOOFIYA%20AL%20AHLI%201.png" alt="poster:DESIGN"/>
+                </div>
+              </div>
+              <div class="slide">
+                <div class="thumb" data-type="image" data-src="https://uploads.onecompiler.io/43wqawxd5/43wqay9z5/chicken%20nugget.png" aria-label="poster preview 5">
+                  <img loading="lazy" src="https://uploads.onecompiler.io/43wqawxd5/43wqay9z5/chicken%20nugget.png" alt="poster: DESIGN"/>
+                </div>
+              </div>
+              <div class="slide">
+                <div class="thumb" data-type="image" data-src="https://uploads.onecompiler.io/43wqawxd5/43wqay9z5/shawarma.png" aria-label="poster preview 6">
+                  <img loading="lazy" src="https://uploads.onecompiler.io/43wqawxd5/43wqay9z5/shawarma.png" alt="poster: DESIGN"/>
+                </div>
+              </div>
+              <div class="slide">
+                <div class="thumb" data-type="image" data-src="https://uploads.onecompiler.io/43wqawxd5/43wqay9z5/french%20fries.png" aria-label="poster preview 7">
+                  <img loading="lazy" src="https://uploads.onecompiler.io/43wqawxd5/43wqay9z5/french%20fries.png" alt="poster:DESIGN  "/>
+                </div>
+              </div>
+              <div class="slide">
+                <div class="thumb" data-type="image" data-src="https://uploads.onecompiler.io/43wqawxd5/43wqay9z5/funngro%20share%20and%20earn.png" aria-label="poster preview 8">
+                  <img loading="lazy" src="https://uploads.onecompiler.io/43wqawxd5/43wqay9z5/funngro%20share%20and%20earn.png" alt="poster: DESIGN"/>
+                </div>
+              </div>
+               <div class="slide">
+                <div class="thumb" data-type="image" data-src="https://uploads.onecompiler.io/43wqawxd5/43wqay9z5/BE%20ORGANIC%20INTSA%202.png" aria-label="poster preview 9">
+                  <img loading="lazy" src="https://uploads.onecompiler.io/43wqawxd5/43wqay9z5/BE%20ORGANIC%20INTSA%202.png" alt="poster: DESIGN"/>
+                </div>
+              </div>
+               <div class="slide">
+                <div class="thumb" data-type="image" data-src="https://uploads.onecompiler.io/43wqawxd5/43wqay9z5/HEALTH%20POSTER.png" aria-label="poster preview 10">
+                  <img loading="lazy" src="https://uploads.onecompiler.io/43wqawxd5/43wqay9z5/HEALTH%20POSTER.png" alt="poster: DESIGN"/>
+                </div>
+              </div>
+               <div class="slide">
+                <div class="thumb" data-type="image" data-src="https://uploads.onecompiler.io/43wqawxd5/43wqay9z5/POSTER%20%20INSTA.png" aria-label="poster preview 11">
+                  <img loading="lazy" src="https://uploads.onecompiler.io/43wqawxd5/43wqay9z5/POSTER%20%20INSTA.png" alt="poster: DESIGN"/>
+                </div>
+              </div>
+               <div class="slide">
+                <div class="thumb" data-type="image" data-src="https://uploads.onecompiler.io/43wqawxd5/43wqay9z5/POSTER%20BEORGANIC.png" aria-label="poster preview 12">
+                  <img loading="lazy" src="https://uploads.onecompiler.io/43wqawxd5/43wqay9z5/POSTER%20BEORGANIC.png" alt="poster:DESIGN "/>
+                </div>
+              </div>
+               <div class="slide">
+                <div class="thumb" data-type="image" data-src="https://uploads.onecompiler.io/43wqawxd5/43wqay9z5/watchn%20poster.png" aria-label="poster preview 13">
+                  <img loading="lazy" src="https://uploads.onecompiler.io/43wqawxd5/43wqay9z5/watchn%20poster.png" alt="poster: DESIGN"/>
+                </div>
+              </div>
+               <div class="slide">
+                <div class="thumb" data-type="image" data-src="https://uploads.onecompiler.io/43wqawxd5/43wqay9z5/be%20organic.png" aria-label="poster preview 14">
+                  <img loading="lazy" src="https://uploads.onecompiler.io/43wqawxd5/43wqay9z5/be%20organic.png" alt="poster: DESIGN"/>
+                </div>
+              </div>
+              <div class="slide">
+  <div class="thumb" data-type="image" data-src="https://uploads.onecompiler.io/43b9uen47/43wwa8cdv/burger.png" aria-label="poster preview 15">
+    <img loading="lazy" src="https://uploads.onecompiler.io/43b9uen47/43wwa8cdv/burger.png" alt="poster: DESIGN"/>
+  </div>
+</div>
+            </div>
+            <div class="arrow right" role="button" aria-label="Next">›</div>
+          </div>
+        </div>
+
+         
+
+    <!-- HIGHLIGHTS -->
+    <section id="highlights">
+      <div class="container">
+        <div class="section-title"><h2>Highlights</h2></div>
+        <div class="hi reveal">
+          <div class="hi-item"><div class="hi-bullet"></div><div><strong>Created contest design</strong> 🏆</div></div>
+          <div class="hi-item"><div class="hi-bullet"></div><div><strong>Built Ads for brands</strong> 🎥</div></div>
+          <div class="hi-item"><div class="hi-bullet"></div><div>Designed multiple brand posters & client reels — <a href="https://www.canva.com/design/DAGt9XKVFaI/lFB0giWn3LcYmZa-Ts634Q/watch?utm_content=DAGt9XKVFaI&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h197ec1c842" target="_blank" rel="noopener">see one here</a>.</div></div>
+          <div class="hi-item"><div class="hi-bullet"></div><div>Worked with <strong>5 companies</strong> as freelancer</div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section id="services">
+      <div class="container">
+        <div class="section-title"><h2>Services</h2></div>
+        <div class="services reveal">
+          <div class="service">
+            <h3 style="color:#fff;margin-top:0">Graphic Design</h3>
+            <p class="subtle">Posters, thumbnails, social creatives, brand visuals.</p>
+          </div>
+          <div class="service">
+            <h3 style="color:#fff;margin-top:0">Video Editing</h3>
+            <p class="subtle">Podcasts, shorts, reels with snappy pacing & captions.</p>
+          </div>
+          <div class="service">
+            <h3 style="color:#fff;margin-top:0">Motion Graphic Design</h3>
+            <p class="subtle">Logo stingers, lyric animations, kinetic type.</p>
+          </div>
+          <div class="service">
+            <h3 style="color:#fff;margin-top:0">Ads for Social Media</h3>
+            <p class="subtle">Performance-focused creatives for Instagram & YouTube.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="container grid cols-2">
+        <div class="card reveal">
+          <h2 style="color:#fff;margin-top:0">Contact</h2>
+          <p class="subtle" style="margin-bottom:10px">Email: <a href="mailto:Zubair.touch@gmail.com">Zubair.touch@gmail.com</a></p>
+          <p class="subtle" style="margin:0 0 14px">Find me on:</p>
+          <p class="pills">
+            <a class="pill" href="https://www.instagram.com/fiorint.design?igsh=MWQyZDg1NDhqMWZ3" target="_blank" rel="noopener">Instagram</a>
+            <a class="pill" href="https://www.linkedin.com/in/shaik-zubair-b84979369" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="pill" href="https://www.youtube.com/@Auzra.designs" target="_blank" rel="noopener">YouTube</a>
+          </p>
+        </div>
+        <div class="card reveal">
+          <h3 style="color:#fff;margin-top:0">Send a Message</h3>
+          <form id="contact-form">
+            <div class="row">
+              <label>
+                <span class="subtle">Name</span>
+                <input type="text" name="name" required />
+              </label>
+              <label>
+                <span class="subtle">Email</span>
+                <input type="email" name="email" required />
+              </label>
+            </div>
+            <label>
+              <span class="subtle">Message</span>
+              <textarea name="message" required></textarea>
+            </label>
+            <button class="btn solid" type="submit">Send</button>
+            <p id="form-status" style="color:lightgreen; margin-top:10px; display:none;">
+              ✅ Message Sent Successfully!
+            </p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    © <span id="year"></span> Shaik Zubair • All rights reserved.
+  </footer>
+
+  <!-- LIGHTBOX -->
+  <div class="lightbox" id="lightbox" aria-modal="true" role="dialog">
+    <div class="inner">
+      <button class="close" aria-label="Close">✕</button>
+      <div id="lightbox-content"></div>
+      <div class="controls">
+        <div>
+          <a id="open-new-tab" href="#" target="_blank" rel="noopener">Open in new tab</a>
+        </div>
+        <div>
+          <button class="btn ghost" id="lb-prev" type="button">‹ Prev</button>
+          <button class="btn ghost" id="lb-next" type="button">Next ›</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  // Header solid/transparent toggle
+  const header = document.querySelector('header');
+  const setHeaderBg = () => {
+    if (window.scrollY > 40) header.classList.add('solid'), header.classList.remove('transparent');
+    else header.classList.add('transparent'), header.classList.remove('solid');
+  };
+  setHeaderBg();
+  window.addEventListener('scroll', setHeaderBg);
+
+  // Active nav link on scroll
+  const navLinks = Array.from(document.querySelectorAll('nav a'));
+  const sections = navLinks.map(a => document.querySelector(a.getAttribute('href')));
+  const activate = (id) => navLinks.forEach(a => a.classList.toggle('active', a.getAttribute('href') === '#' + id));
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) activate(e.target.id); });
+  }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
+  sections.forEach(s => s && io.observe(s));
+
+  // Reveal on scroll
+  const revIO = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }), { threshold:.2 });
+  document.querySelectorAll('.reveal').forEach(el => revIO.observe(el));
+
+  // Year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Lightweight Slider
+// Infinite Slider with Mouse Drag + Keyboard Controls
+class Slider {
+  constructor(root, { interval = 4500 } = {}) {
+    this.root = root;
+    this.track = root.querySelector('.track');
+    this.slides = [...root.querySelectorAll('.slide')];
+    this.slideWidth = this.slides[0]?.getBoundingClientRect().width || 300;
+    this.interval = interval;
+    this.timer = null;
+
+    // clone slides for infinite effect
+    this.track.innerHTML += this.track.innerHTML;
+
+    this.bind();
+    this.autoplay();
+  }
+
+  bind() {
+    const prev = this.root.querySelector('.arrow.left');
+    const next = this.root.querySelector('.arrow.right');
+
+    prev.addEventListener('click', () => this.go(-1));
+    next.addEventListener('click', () => this.go(1));
+
+    this.root.addEventListener('mouseenter', () => this.pause());
+    this.root.addEventListener('mouseleave', () => this.autoplay());
+
+    // drag / swipe
+    let startX = 0, scrollStart = 0, isDragging = false;
+    this.track.addEventListener('pointerdown', e => {
+      startX = e.clientX;
+      scrollStart = this.track.scrollLeft;
+      isDragging = true;
+      this.track.setPointerCapture(e.pointerId);
+      this.pause();
+    });
+    this.track.addEventListener('pointermove', e => {
+      if (!isDragging) return;
+      const dx = e.clientX - startX;
+      this.track.scrollLeft = scrollStart - dx;
+    });
+    window.addEventListener('pointerup', () => {
+      if (isDragging) {
+        isDragging = false;
+        this.autoplay();
+      }
+    });
+  }
+
+  go(dir) {
+    this.track.scrollBy({ left: this.slideWidth * dir, behavior: 'smooth' });
+
+    // reset to start when reaching end
+    if (this.track.scrollLeft >= this.track.scrollWidth / 2) {
+      this.track.scrollLeft = 0;
+    }
+    if (this.track.scrollLeft <= 0) {
+      this.track.scrollLeft = this.track.scrollWidth / 2;
+    }
+  }
+
+  autoplay() {
+    clearInterval(this.timer);
+    this.timer = setInterval(() => this.go(1), this.interval);
+  }
+
+  pause() {
+    clearInterval(this.timer);
+  }
+}
+
+// Init sliders
+const sliders = [...document.querySelectorAll('.slider')].map(
+  s => new Slider(s, { interval: 5000 })
+);
+
+// Keyboard controls (← →)
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight') sliders[0].go(1);   // move right
+  if (e.key === 'ArrowLeft')  sliders[0].go(-1);  // move left
+});
+
+
+  // Lightbox
+  const lb=document.getElementById('lightbox');
+  const lbContent=document.getElementById('lightbox-content');
+  const lbOpenNew=document.getElementById('open-new-tab');
+  const lbPrev=document.getElementById('lb-prev');
+  const lbNext=document.getElementById('lb-next');
+  let lbCtx={ slider:null, index:0 };
+
+  function openLightbox(slider, index){
+    lbCtx.slider=slider; lbCtx.index=index; renderLB(); lb.classList.add('open'); document.body.style.overflow='hidden';
+  }
+  function closeLightbox(){ lb.classList.remove('open'); lbContent.innerHTML=''; document.body.style.overflow=''; }
+
+  function renderLB(){
+    const items=[...lbCtx.slider.root.querySelectorAll('.thumb, .thumb-video')];
+    let el=items[lbCtx.index]; if(!el) return;
+    const type=el.dataset.type; const src=el.dataset.src;
+    lbContent.innerHTML='';
+    if(type==='image'){
+      const img=new Image(); img.alt='Preview'; img.src=src; img.loading='eager'; lbContent.appendChild(img);
+    } else {
+      // try iframe, but also give open-new-tab link
+      const iframe=document.createElement('iframe');
+      iframe.src=src; iframe.allowFullscreen=true; iframe.referrerPolicy='no-referrer'; iframe.loading='eager';
+      lbContent.appendChild(iframe);
+    }
+    lbOpenNew.href=src;
+  }
+  document.querySelector('.lightbox .close').addEventListener('click', closeLightbox);
+  lb.addEventListener('click', e=>{ if(e.target===lb) closeLightbox(); });
+  document.addEventListener('keydown', e=>{
+    if(!lb.classList.contains('open')) return;
+    if(e.key==='Escape') closeLightbox();
+    if(e.key==='ArrowRight') stepLB(1);
+    if(e.key==='ArrowLeft') stepLB(-1);
+  });
+  function stepLB(dir){
+    const items=[...lbCtx.slider.root.querySelectorAll('.thumb, .thumb-video')];
+    lbCtx.index = (lbCtx.index + dir + items.length) % items.length; renderLB();
+  }
+  lbPrev.addEventListener('click', ()=>stepLB(-1));
+  lbNext.addEventListener('click', ()=>stepLB(1));
+
+  // Animate badges sequentially
+  const badges=document.querySelectorAll('#app-badges .pill');
+  badges.forEach((b,i)=>{ b.style.opacity=0; b.style.transform='translateY(8px)'; b.style.transition='all .4s ease'; setTimeout(()=>{ b.style.opacity=1; b.style.transform='none'; }, 200 + i*120); });
+  </script>
+
+  <script>
+    // Contact form submit handler (Formspree)
+    const form = document.getElementById("contact-form");
+    const statusMsg = document.getElementById("form-status");
+
+    form.addEventListener("submit", async function (e) {
+      e.preventDefault(); // stop default redirect
+      const data = new FormData(form);
+
+      try {
+        let response = await fetch("https://formspree.io/f/xvgbozak", {
+          method: "POST",
+          body: data,
+          headers: { Accept: "application/json" },
+        });
+
+        if (response.ok) {
+          statusMsg.style.display = "block"; // show success
+          form.reset(); // clear form
+        } else {
+          alert("❌ Oops! Something went wrong, try again.");
+        }
+      } catch (err) {
+        alert("⚠️ Network error, please try later.");
+      }
+    });
+  </script>
+</body>
+</html>
+
